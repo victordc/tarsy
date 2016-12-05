@@ -1,21 +1,6 @@
-{% load staticfiles %}
+{% extends 'tarsier/base.html' %}
 
-<html>
-    <head>
-        <title>Coding with Tarsy</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/tarsy.css' %}">
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="">Coding with Tarsy</a></h1>
-        </div>
-
-        <div class="content container">
-        <div class="row">
-        <div class="col-md-8">
-
+{% block content %}
         <div class="post">
             <p>published: 14.06.2014, 12:14</p>
             <h2><a href="">My first post</a></h2>
@@ -27,9 +12,4 @@
             <h2><a href="">My second post</a></h2>
             <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
         </div>
-
-        </div>
-        </div>
-        </div>
-    </body>
-</html>
+{% endblock %}
