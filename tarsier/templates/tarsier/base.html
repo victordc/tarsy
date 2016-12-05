@@ -1,11 +1,16 @@
+<!DOCTYPE html>
 {% load staticfiles %}
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Coding with Tarsy</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/tarsy.css' %}">
+        <script src="{% static 'blockly/blockly_compressed.js' %}"></script>
+        <script src="{% static 'blockly/blocks_compressed.js' %}"></script>
+        <script src="{% static 'blockly/msg/js/en.js' %}"></script>
     </head>
     <body>
         <div class="page-header">
