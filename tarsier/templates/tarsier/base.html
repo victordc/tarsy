@@ -11,19 +11,31 @@
         <script src="{% static 'blockly/blockly_compressed.js' %}"></script>
         <script src="{% static 'blockly/blocks_compressed.js' %}"></script>
         <script src="{% static 'blockly/msg/js/en.js' %}"></script>
+        <style>
+            html, body {
+              height: 100%;
+              margin: 0;
+            }
+            body {
+              background-color: #fff;
+              font-family: sans-serif;
+              overflow: hidden;
+            }
+            h1 {
+              font-weight: normal;
+              font-size: 140%;
+            }
+            table {
+              height: 100%;
+              width: 100%;
+            }
+            #blocklyArea {
+              height: 99%;
+            }
+        </style>
     </head>
     <body>
-        <div class="page-header">
-            <h1><a href="/">Coding with Tarsy</a></h1>
-        </div>
-
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                {% block content %}
-                {% endblock %}
-                </div>
-            </div>
-        </div>
+      {% block content %}
+      {% endblock %}
     </body>
 </html>
