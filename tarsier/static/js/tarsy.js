@@ -40,3 +40,8 @@ function updateFunctions(event) {
     localStorage.setItem("blockly", xml_text);
 }
 workspace.addChangeListener(updateFunctions);
+
+var btnClear = document.getElementById('clrOption');
+btnClear.addEventListener('click', function () {
+	Blockly.mainWorkspace.clear();	
+});
