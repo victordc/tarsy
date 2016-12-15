@@ -18,13 +18,14 @@
 # limitations under the License.
 
 import argparse
+from common import InputError
+from common import write_files
 import os
 import re
 import subprocess
 import sys
 from xml.dom import minidom
-from common import InputError
-from common import write_files
+
 
 # Global variables
 args = None  # Parsed command-line arguments.

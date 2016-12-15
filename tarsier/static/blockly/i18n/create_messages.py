@@ -19,10 +19,10 @@
 
 import argparse
 import codecs
+from common import read_json_file
 import os
 import re
 import sys
-from common import read_json_file
 
 
 _NEWLINE_PATTERN = re.compile('[\n\r]')

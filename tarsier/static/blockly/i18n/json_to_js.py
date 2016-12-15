@@ -18,13 +18,13 @@
 # limitations under the License.
 
 import argparse
-import codecs      # for codecs.open(..., 'utf-8')
-import glob
-import json        # for json.load()
-import os          # for os.path()
-import subprocess  # for subprocess.check_call()
+import codecs  # for codecs.open(..., 'utf-8')
 from common import InputError
 from common import read_json_file
+import glob
+import json  # for json.load()
+import os  # for os.path()
+import subprocess  # for subprocess.check_call()
 
 
 # Store parsed command-line arguments in global variable.

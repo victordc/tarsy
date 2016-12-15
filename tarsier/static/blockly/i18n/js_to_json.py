@@ -42,10 +42,10 @@ Commas would of course be omitted for the final entry of each value.
 
 import argparse
 import codecs
+from common import write_files
 import json
 import os
 import re
-from common import write_files
 
 
 _INPUT_DEF_PATTERN = re.compile("""Blockly.Msg.(\w*)\s*=\s*'([^']*)';?$""")

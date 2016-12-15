@@ -1,21 +1,29 @@
 {% extends 'tarsier/base.html' %}
 
 {% block content %}
-<table>
+<div class="container-fluid" role="main" style="height: 100%">
+<h1><a href="/">Coding with Tarsy</a></h1>   
+<table class="table table-bordered">
+   <thead>
+     <tr>
+       <th>Graphical View</th>
+       <th>Source Code</th>
+     </tr>
+   </thead>
    <tbody>
       <tr>
-         <td>
-            <h1><a href="/">Coding with Tarsy</a></h1>
+         <td class="container-fluid col-md-8" id="blocklyArea">
+      	    <div id="blocklyDiv"></div>
          </td>
-      </tr>
-      <tr>
-         <td id="blocklyArea">
+         <td class="container-fluid col-md-4">
+      	    <textarea class="form-control" name="sourceArea" id="sourceArea" 
+      	    rows="28%" readonly>Your code will show up here</textarea>
          </td>
       </tr>
    </tbody>
 </table>
+</div>
 
-<div id="blocklyDiv" style="position: absolute"></div>
 
 <xml id="toolbox" style="display: none">
    <!--category name="Components">
@@ -145,5 +153,13 @@ var onresize = function(e) {
 window.addEventListener('resize', onresize, false);
 onresize();
 Blockly.svgResize(workspace);
+
+var code = Blockly.JavaScript.workspaceToCode(workspace);
+function myUpdateFunction(event) {
+	  var code = Blockly.JavaScript.workspaceToCode(workspace);
+	  document.getElementById('sourceArea').value = code;
+	}
+	workspace.addChangeListener(myUpdateFunction);
+	
 </script>
 {% endblock %}

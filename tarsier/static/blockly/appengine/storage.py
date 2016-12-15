@@ -22,10 +22,11 @@ limitations under the License.
 __author__ = "q.neutron@gmail.com (Quynh Neutron)"
 
 import cgi
-from random import randint
-from google.appengine.ext import db
 from google.appengine.api import memcache
+from google.appengine.ext import db
 import logging
+from random import randint
+
 
 print "Content-Type: text/plain\n"
 

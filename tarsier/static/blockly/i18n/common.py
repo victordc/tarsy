@@ -18,9 +18,10 @@
 # limitations under the License.
 
 import codecs
+from datetime import datetime
 import json
 import os
-from datetime import datetime
+
 
 class InputError(Exception):
     """Exception raised for errors in the input.

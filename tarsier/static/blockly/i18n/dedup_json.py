@@ -23,8 +23,8 @@
 
 import argparse
 import codecs
-import json
 from common import InputError
+import json
 
 
 def main():

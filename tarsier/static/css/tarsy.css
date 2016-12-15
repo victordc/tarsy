@@ -1,8 +1,13 @@
-body {
-  background-color: #fff;
-  font-family: sans-serif;
+html {
+  height: 85%;
 }
-h1 {
-  font-weight: normal;
-  font-size: 140%;
+body, table, tbody, td {
+  height: 100%;
+  width: 100%;
+}
+textarea {
+  height: 100%;
+}
+#blocklyArea {
+  height: 99%;
 }
