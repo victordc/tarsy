@@ -17,13 +17,26 @@ var onresize = function(e) {
   blocklyDiv.style.top = y + 'px';
   blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
   blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+  
+  //Restore blocks from localstorage XML
+  var xml_text = window.localStorage.getItem("blockly");
+  if (xml_text) {
+      xml = Blockly.Xml.textToDom(xml_text);
+      Blockly.Xml.domToWorkspace(xml, workspace);
+  };
 };
 window.addEventListener('resize', onresize, false);
 onresize();
 Blockly.svgResize(workspace);
 
-function myUpdateFunction(event) {
-	  var code = Blockly.JavaScript.workspaceToCode(workspace);
-	  document.getElementById('sourceArea').value = code;
+function updateFunctions(event) {
+	//Reflect the source code on the right
+	var code = Blockly.JavaScript.workspaceToCode(workspace);
+	document.getElementById('sourceArea').value = code;
+
+	//Store blocks locally as XML
+	var xml = Blockly.Xml.workspaceToDom(workspace);
+    var xml_text = Blockly.Xml.domToText(xml);
+    window.localStorage.setItem("blockly", xml_text);
 }
-workspace.addChangeListener(myUpdateFunction);
+workspace.addChangeListener(updateFunctions);
