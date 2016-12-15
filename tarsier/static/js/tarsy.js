@@ -19,7 +19,7 @@ var onresize = function(e) {
   blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
   
   //Restore blocks from localstorage XML
-  var xml_text = window.localStorage.getItem("blockly");
+  var xml_text = localStorage.getItem("blockly");
   if (xml_text) {
       xml = Blockly.Xml.textToDom(xml_text);
       Blockly.Xml.domToWorkspace(xml, workspace);
@@ -37,6 +37,6 @@ function updateFunctions(event) {
 	//Store blocks locally as XML
 	var xml = Blockly.Xml.workspaceToDom(workspace);
     var xml_text = Blockly.Xml.domToText(xml);
-    window.localStorage.setItem("blockly", xml_text);
+    localStorage.setItem("blockly", xml_text);
 }
 workspace.addChangeListener(updateFunctions);
